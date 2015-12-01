@@ -1,0 +1,18 @@
+  <!-- <dt>State:</dt>
+    <dd><%= #@zip_code.state %></dd>
+    <dt>Area Code:</dt>
+    <dd><%=# @zip_code.area_code %></dd>
+    <dt>Time Zone:</dt>
+    <dd><%= #@zip_code.time_zone %></dd> -->
+
+      client = Savon.client(wsdl: "http://www.webservicex.net/uszip.asmx?WSDL")
+     response = client.call(:get_info_by_zip, message: { "USZip" => "90210" })
+     if response.success?
+      data = response.to_array(:get_info_by_zip_response, :get_info_by_zip_result, :new_data_set, :table).first
+         if data
+          # @state = data[:state]  	
+  	       @zip_code = data[:city]  #  data[:state]  # ZipCode.new(params[:zip_code]) # if params[:zip_code].present?
+         # @zip_code = "DD"
+         @amir = params[:zip_code] 
+         end
+      end
