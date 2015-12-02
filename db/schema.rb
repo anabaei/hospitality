@@ -11,7 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151130204427) do
+ActiveRecord::Schema.define(version: 20151202153715) do
+
+  create_table "drivers", force: :cascade do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "zip_codes", force: :cascade do |t|
     t.datetime "created_at", null: false

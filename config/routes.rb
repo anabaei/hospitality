@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'drivers/index'
+  resources :drivers
+  get 'drivers/new'
+
   get 'zip_code_lookup/index' => 'zip_code_lookup#index' 
   root 'zip_code_lookup#index'
  match ':controller(/:action(/:id))', :via => :post

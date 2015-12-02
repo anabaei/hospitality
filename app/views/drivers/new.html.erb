@@ -1,0 +1,16 @@
+<h1>Drivers#new</h1>
+
+
+  <%= form_for @driver  do |f| %>
+    <%= f.label :first_name %> <br>
+    <%= f.text_field :first_name %> <br>
+     <%= f.submit %> 
+  <% end %>
+
+<ul>
+<% @ds.each do |driver| %>
+  
+  <li> <%= driver.first_name %> </li>
+
+<% end %>
+</ul>

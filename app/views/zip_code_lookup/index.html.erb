@@ -1,18 +1,10 @@
 
-
-
-
- <% params[:zip_code] = "DD" %>
- <%= form_for(@zip_code) do |f| %>
-    <%= f.text_field  %>
-    <%= f.submit %>
- <% end %>
-
 <%= debug params %>
 
   <dl id ="zip_info">
-    <dd><%= @zip_code %></dd>
-    <dd><%= @amir %></dd>
+    <dd><%= @as %></dd>
+    <%= render text: @city.inspect %></dd>
+ 
   </dl>
 
 
