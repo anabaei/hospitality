@@ -16,3 +16,18 @@
          @amir = params[:zip_code] 
          end
       end
+
+
+  attr_reader :state, :city, :area_code, :time_zone
+
+        client = Savon.client(WSDL: "http://www.webservicex.net/uszip.asmx?WSDL")
+    response = client.call (:get_info_by_zip, message: { "USZip" => "90210" })
+    if response.success?
+      data = response.to_array(:get_info_by_zip_response, :get_info_by_zip_result, :new_data_set, :table).first
+      if data
+        @state = data[:state]
+        @city = data[:city]
+        @area_code = data[:area_code]
+        @time_zone = data[:time_zone]
+       end
+     end

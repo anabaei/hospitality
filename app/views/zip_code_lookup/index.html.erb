@@ -1,22 +1,21 @@
 
-<p>Find me in app/views/zip_code_lookup/index.html.erb</p>
-
-
-<%= form_tag root_url, method: :get do %>
-<p>
-  <%= text_field_tag :zip_code, params[:zip_code] %>
-  <%= submit_tag "Lookup", name: nil %>
-</p>
-<% end %>
 
 
 
+ <% params[:zip_code] = "DD" %>
+ <%= form_for(@zip_code) do |f| %>
+    <%= f.text_field  %>
+    <%= f.submit %>
+ <% end %>
 
-<% if @zip_code %>
+<%= debug params %>
+
   <dl id ="zip_info">
-    <dt>City:</dt>
     <dd><%= @zip_code %></dd>
-    <dd> <%= @amir %> </dd>
+    <dd><%= @amir %></dd>
   </dl>
-<% end %>
+
+
+
+
 

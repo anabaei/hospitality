@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   get 'zip_code_lookup/index' => 'zip_code_lookup#index' 
   root 'zip_code_lookup#index'
- 
+ match ':controller(/:action(/:id))', :via => :post
 
   get 'welcome/index'
 
