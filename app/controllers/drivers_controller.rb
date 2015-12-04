@@ -39,20 +39,20 @@ class DriversController < ApplicationController
     # response = client.call(:get_product_by_sku, message: { "sku" => @as })
 
  #############################  ENDING HITING THE SOAP  SERVICE ####################################### 
- ############################## ############################## ######################################## 
+ ############################## -##############################- ######################################## 
 
        @res = response
          if response.success?
            @data = response.to_array
      #########(only for zip code call) This part is to split response into parts that we want ###### ############################## ##############################
-       data = response.to_array(:get_info_by_zip_response, :get_info_by_zip_result, :new_data_set, :table).first # here we dig into nested hash response to zip code 
-       @data = response.to_array
-       if data
-          @state = data[:state]
-          @city = data[:city]
-          @area_code = data[:area_code]
-          @time_zone = data[:time_zone]
-        end
+       # data = response.to_array(:get_info_by_zip_response, :get_info_by_zip_result, :new_data_set, :table).first # here we dig into nested hash response to zip code 
+       # @data = response.to_array
+       # if data
+       #    @state = data[:state]
+       #    @city = data[:city]
+       #    @area_code = data[:area_code]
+       #    @time_zone = data[:time_zone]
+       #  end
       ############################## ############################## ############################## ##############################
 
          end
