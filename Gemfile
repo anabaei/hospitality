@@ -48,9 +48,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'rails_12factor', group: :production
 
-group :development, :test do # <<<< :development, not devlopment
-  gem 'sqlite3'
-end
+
 
 group :production do
   gem 'pg'
