@@ -6,8 +6,6 @@ application up and running.
 
 * Ruby version: 2.2
 
-* Configuration : gem 'savon'
-
 * Database creation: no database, only Soap
 
 * How to run the test suite: gem 'savon' 
