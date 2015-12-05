@@ -1,16 +1,18 @@
-<h1>Drivers#new</h1>
 
-
+ <h1> Hospitality </h1>
+   
   <%= form_for @driver  do |f| %>
-    <%= f.label :first_name %> <br>
-    <%= f.text_field :first_name %> <br>
-     <%= f.submit %> 
+    <%= f.label :SKU %> <br>
+    <%= f.text_field :first_name %> <br><br>
+     <%= f.submit "Go Search me!", class: "btn btn-danger" %> 
   <% end %>
 
-<ul>
-<% @ds.each do |driver| %>
-  
-  <li> <%= driver.first_name %> </li>
-
-<% end %>
-</ul>
+    <h2>
+     <%= @name %>
+    </h2>
+     <h4>
+     <%= @brand %>
+    </h4>
+ <dd>SKU= <%= @as %></dd>
+ <legend><br></legend>
+  <dd><% @res %></dd>
